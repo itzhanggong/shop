@@ -36,6 +36,12 @@
 				<prop key="hibernate.connection.autocommit">false</prop>
 			</props>
 		</property>
+		
+		<property name="mappingResources">
+			<list>
+				<value>com/zg/shop/user/User.hbm.xml</value>
+			</list>
+		</property>
 	</bean>
 	
 	<!-- 事务管理器 -->
@@ -46,7 +52,21 @@
 	 
 	 
 	 <!-- 配置Action -->
-	 <bean id="indexAction" class="com.zg.shop.user.IndexAction" scope="prototype"></bean>
+	 <bean id="indexAction" class="com.zg.shop.index.IndexAction" scope="prototype"></bean>
+	 <bean id="userAction" class="com.zg.shop.user.UserAction" scope="prototype">
+	 	<property name="userService" ref="userService"></property>
+	 </bean>
+	 
+	 
+	 <!-- 配置Service -->
+	 <bean id="userService" class="com.zg.shop.user.UserService">
+	 	<property name="userDao" ref="userDao"></property>
+	 </bean>
+	 
+	 <!-- 配置DAO -->
+	 <bean id="userDao" class="com.zg.shop.user.UserDao">
+	 	<property name="sessionFactory" ref="sessionFactory"></property>
+	 </bean>
 </beans>
 
 

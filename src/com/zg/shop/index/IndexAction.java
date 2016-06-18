@@ -1,4 +1,4 @@
-package com.zg.shop.user;
+package com.zg.shop.index;
 
 import com.opensymphony.xwork2.ActionSupport;
 

@@ -1,4 +1,5 @@
 ﻿<%@ page pageEncoding="UTF-8" contentType="text/html;charset=UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -31,10 +32,22 @@
 		<div class="span10 last">
 			<div class="topNav clearfix">
 				<ul>
-					<li id="headerLogin" class="headerLogin"
-						style="display: list-item;"><a href="./会员登录.htm">登录</a>|</li>
+					<s:if test="#session.existUser != null">
+						<li id="headerLogin" class="headerLogin" style="display: list-item;">
+							<s:property value="#session.existUser.username"/>&nbsp&nbsp&nbsp|
+						</li>
+						<li id="headerLogin" class="headerLogin" style="display: list-item;">
+							<a href="${pageContext.request.contextPath}/user_loginPage.action">退出</a>|
+						</li>
+					</s:if>
+					<s:else>
+						<li id="headerLogin" class="headerLogin"
+							style="display: list-item;"><a
+							href="${pageContext.request.contextPath}/user_loginPage.action">登录</a>|</li>
+					</s:else>
 					<li id="headerRegister" class="headerRegister"
-						style="display: list-item;"><a href="./会员注册.htm">注册</a>|</li>
+						style="display: list-item;"><a
+						href="${pageContext.request.contextPath }/user_registPage.action">注册</a>|</li>
 					<li id="headerUsername" class="headerUsername"></li>
 					<li id="headerLogout" class="headerLogout"><a>[退出]</a>|</li>
 					<li><a>会员中心</a> |</li>
