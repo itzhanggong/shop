@@ -75,6 +75,7 @@
 
 		return xmlHttp;
 	}
+<<<<<<< HEAD
 	
 	
 	function chengeCheckImg(){
@@ -252,6 +253,174 @@
 												id="checkImg" class="captchaImage"
 												src="${pageContext.request.contextPath}/checkImg.action"
 												title="点击更换验证码" onclick="chengeCheckImg()"/></span></td>
+=======
+</script>
+</head>
+<body>
+	<div class="container header">
+		<div class="span5">
+			<div class="logo">
+				<a href="http://localhost:8080/mango/"> <img
+					src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif"
+					alt="传智播客"></a>
+			</div>
+		</div>
+		<div class="span9">
+			<div class="headerAd">
+				<img src="${pageContext.request.contextPath}/image/header.jpg"
+					width="320" height="50" alt="正品保障" title="正品保障">
+			</div>
+		</div>
+		<div class="span10 last">
+			<div class="topNav clearfix">
+				<ul>
+					<li id="headerLogin" class="headerLogin"
+						style="display: list-item;"><a href="${pageContext.request.contextPath}/user_loginPage.action">登录</a>|</li>
+					<li id="headerRegister" class="headerRegister"
+						style="display: list-item;"><a href="${pageContext.request.contextPath}/user_registPage.action">注册</a>|</li>
+					<li id="headerUsername" class="headerUsername"></li>
+					<li id="headerLogout" class="headerLogout"><a
+						href="./index.htm">[退出]</a>|</li>
+					<li><a>会员中心</a> |</li>
+					<li><a>购物指南</a> |</li>
+					<li><a>关于我们</a></li>
+				</ul>
+			</div>
+			<div class="cart">
+				<a href="./购物车.htm">购物车</a>
+			</div>
+			<div class="phone">
+				客服热线: <strong>96008/53277764</strong>
+			</div>
+		</div>
+		<div class="span24">
+			<ul class="mainNav">
+				<li><a href="./index.htm">首页</a> |</li>
+				<li><a href="./蔬菜分类.htm">定制套餐</a> |</li>
+				<li><a>安全频道</a> |</li>
+				<li><a>亿家卡</a> |</li>
+				<li><a>蔬菜基地</a> |</li>
+				<li><a>节气养生</a> |</li>
+				<li><a>便民服务</a> |</li>
+
+			</ul>
+		</div>
+		<div class="span24"></div>
+	</div>
+	<div class="container register">
+		<div class="span24">
+			<div class="wrap">
+				<div class="main clearfix">
+					<div class="title">
+						<strong>会员注册</strong>USER REGISTER
+					
+					</div>
+					<form id="registerForm" action="${pageContext.request.contextPath }/user_regist.action" method="post" novalidate="novalidate"
+						onsubmit="return checkForm();">
+						<table>
+							<tbody>
+								<tr>
+									<th><span class="requiredField">*</span>用户名:</th>
+									<td><input type="text" id="username" name="username"
+										class="text" maxlength="20" onblur="checkUserName()">
+									<span id="span1"><s:fielderror fieldName="username"/></span></td>
+								</tr>
+								<tr>
+									<th><span class="requiredField">*</span>密&nbsp;&nbsp;码:</th>
+									<td><input type="password" id="password" name="password"
+										class="text" maxlength="20" autocomplete="off">
+										<span><s:fielderror fieldName="password"/></span></td>
+								</tr>
+								<tr>
+									<th><span class="requiredField">*</span>确认密码:</th>
+									<td><input type="password" id="repassword"
+										name="repassword" class="text" maxlength="20"
+										autocomplete="off"></td>
+								</tr>
+								<tr>
+									<th><span class="requiredField">*</span>E-mail:</th>
+									<td><input type="text" id="email" name="email"
+										class="text" maxlength="200">
+										<span><s:fielderror fieldName="email"/></span></td>
+								</tr>
+								<tr>
+									<th><span class="requiredField">*</span>电话:</th>
+									<td><input type="text" id="phone" name="phone"
+										class="text" maxlength="200"></td>
+								</tr>
+								<tr>
+									<th>姓名:</th>
+									<td><input type="text" id="name" name="name"
+										class="text" maxlength="200"></td>
+								</tr>
+								<tr>
+									<th>性别:</th>
+									<td><span class="fieldSet"> <label> <input
+												type="radio" name="sex" value="1">男
+											</label> <label> <input type="radio" name="sex"
+												value="2">女 </label>
+									</span></td>
+								</tr>
+								<!-- <tr>
+									<th>出生日期:</th>
+									<td><input type="text" name="memberAttribute_3"
+										class="text" onfocus="WdatePicker();"></td>
+								</tr> -->
+								<%-- <tr>
+									<th>地区:</th>
+									<td><span class="fieldSet"> <input type="hidden"
+											id="areaId" name="memberAttribute_4"><select
+												name="memberAttribute_4_select" style="margin-right: 4px;"><option
+														value="">请选择...</option>
+													<option value="1">北京市</option>
+													<option value="18">天津市</option>
+													<option value="35">河北省</option>
+													<option value="219">山西省</option>
+													<option value="351">内蒙古自治区</option>
+													<option value="465">辽宁省</option>
+													<option value="580">吉林省</option>
+													<option value="650">黑龙江省</option>
+													<option value="792">上海市</option>
+													<option value="810">江苏省</option>
+													<option value="926">浙江省</option>
+													<option value="1028">安徽省</option>
+													<option value="1150">福建省</option>
+													<option value="1245">江西省</option>
+													<option value="1357">山东省</option>
+													<option value="1515">河南省</option>
+													<option value="1692">湖北省</option>
+													<option value="1809">湖南省</option>
+													<option value="1946">广东省</option>
+													<option value="2089">广西壮族自治区</option>
+													<option value="2213">海南省</option>
+													<option value="2240">重庆市</option>
+													<option value="2279">四川省</option>
+													<option value="2482">贵州省</option>
+													<option value="2580">云南省</option>
+													<option value="2726">西藏自治区</option>
+													<option value="2807">陕西省</option>
+													<option value="2925">甘肃省</option>
+													<option value="3026">青海省</option>
+													<option value="3078">宁夏回族自治区</option>
+													<option value="3106">新疆维吾尔自治区</option>
+													<option value="3219">台湾省</option>
+													<option value="3292">香港特别行政区</option>
+													<option value="3314">澳门特别行政区</option></select></span></td>
+								</tr> --%>
+								<tr>
+									<th>地址:</th>
+									<td><input type="text" id="addr" name="addr"
+										class="text" maxlength="200"></td>
+								</tr>
+								<tr>
+									<th><span class="requiredField">*</span>验证码:</th>
+									<td><span class="fieldSet"> <input type="text"
+											id="captcha" name="captcha" class="text captcha"
+											maxlength="4" autocomplete="off"><img
+												id="captchaImage" class="captchaImage"
+												src="${pageContext.request.contextPath}/image/captcha.jhtml"
+												title="点击更换验证码"></span></td>
+>>>>>>> refs/remotes/origin/master
 								</tr>
 								<tr>
 									<th>&nbsp;</th>

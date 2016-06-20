@@ -58,7 +58,7 @@
 	 </bean>
 	 
 	 <bean id="checkImgAction" class="com.zg.shop.user.CheckImgAction" scope="prototype"></bean>
-	 
+
 	 <!-- 配置Service -->
 	 <bean id="userService" class="com.zg.shop.user.UserService">
 	 	<property name="userDao" ref="userDao"></property>
