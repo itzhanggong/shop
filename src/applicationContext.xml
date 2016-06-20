@@ -57,6 +57,7 @@
 	 	<property name="userService" ref="userService"></property>
 	 </bean>
 	 
+	 <bean id="checkImgAction" class="com.zg.shop.user.CheckImgAction" scope="prototype"></bean>
 	 
 	 <!-- 配置Service -->
 	 <bean id="userService" class="com.zg.shop.user.UserService">

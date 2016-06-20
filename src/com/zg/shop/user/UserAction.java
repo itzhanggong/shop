@@ -18,7 +18,7 @@ import com.opensymphony.xwork2.interceptor.annotations.InputConfig;
 public class UserAction extends ActionSupport implements ModelDriven<User>{
 	private User user = new User();
 	private UserService userService;
-
+	private String checkImgCode;
 	@Override
 	public User getModel() {
 		return user;
@@ -27,8 +27,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 	public void setUserService(UserService userService) {
 		this.userService = userService;
 	}
-
 	
+	public void setCheckImgCode(String checkImgCode) {
+		this.checkImgCode = checkImgCode;
+	}
+
 	/**
 	 * 注册页面跳转
 	 * @return
@@ -50,6 +53,11 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 	 */
 	@InputConfig(resultName="registInput")
 	public String regist(){
+		String checkcode = (String) ServletActionContext.getRequest().getSession().getAttribute("checkcode");
+		if(checkImgCode == null || !checkImgCode.equalsIgnoreCase(checkcode) ){
+			this.addActionError("验证码错误");
+			return "registInput";
+		}
 		userService.regist(user);
 		this.addActionMessage("注册成功，请去邮箱激活！");
 		return "registSuccess";
@@ -100,5 +108,10 @@ public class UserAction extends ActionSupport implements ModelDriven<User>{
 			response.getWriter().print("<font color='red'>用户名已经存在</font>");
 		}
 		return NONE;
+	}
+	
+	public String loginOut(){
+		ServletActionContext.getRequest().getSession().invalidate();
+		return "loginOutSuccess";
 	}
 }

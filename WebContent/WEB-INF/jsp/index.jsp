@@ -37,7 +37,7 @@
 							<s:property value="#session.existUser.username"/>&nbsp&nbsp&nbsp|
 						</li>
 						<li id="headerLogin" class="headerLogin" style="display: list-item;">
-							<a href="${pageContext.request.contextPath}/user_loginPage.action">退出</a>|
+							<a href="${pageContext.request.contextPath}/user_loginOut.action">退出</a>|
 						</li>
 					</s:if>
 					<s:else>
